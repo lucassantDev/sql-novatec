@@ -54,6 +54,26 @@ INSERT INTO users (nome, sobrenome, email, ano_nasc, cpf) VALUES
 ('Igor', 'Brandão', 'igor.brandao@email.com', 1981, '121.913.619-00'),
 ('Bianca', 'Medeiros', 'biancamedeiros@exemplo.com.br', 1990, '990.916.998-33');
 
+# listar todos os usuarios
+select * from users;
+
+# apenas nome e email
+select nome, email from users;
+
+# usuarios nascidos apenas em 1990
+select * from users where ano_nasc = 1990;
+
+# usuarios nascidos antes de 1970
+select * from users where ano_nasc < 1970;
+
+# usuarios ordenados por nome, em ordem alfabetica
+select * from users order by nome;
+
+# os 5 usuarios mais novos
+select * from users order by ano_nasc desc limit 5;
+
+
+
 drop table users;
 
 select id, concat(nome, " ", sobrenome) as "Nome Completo", ano_nasc as "Ano de Nascimento", 
