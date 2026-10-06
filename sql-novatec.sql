@@ -72,6 +72,25 @@ select * from users order by nome;
 # os 5 usuarios mais novos
 select * from users order by ano_nasc desc limit 5;
 
+#-----------------------------------------------
+
+# usuarios que começam com a letra M
+select * from users where nome like "M%";
+
+# usuarios que usam o email no dominio teste @teste.com
+select * from users where email like "%@teste.com";
+
+# usuarios nascidos entre 1980 e 1999
+select * from users where ano_nasc between 1980 and 1999;
+
+# usuarios com sobrenome "Santos", "Costa" ou "Lima"
+select * from users where sobrenome in ("Santos", "Costa", "Lima");
+
+# usuarios com CPF terminado em 00
+select * from users where cpf like "%00";
+
+#-----------------------------------------------
+
 
 
 drop table users;
